@@ -1,0 +1,100 @@
+
+<h1>{{userCpf ? 'Editar' : 'Cadastrar'}}</h1>
+<hr />
+
+<!-- <div>{{ userForm.value | json }}</div> -->
+<div class="contain-fluid">
+  <form class="px-3" [formGroup]="userForm" (ngSubmit)="cadastrar()">
+    <div class="row">
+      <div class="col-12">
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            formControlName="nome"
+          />
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="mb-3">
+          <label for="cpf" class="form-label">CPF</label>
+          <input
+            type="number"
+            class="form-control"
+            id="cpf"
+            formControlName="cpf"
+          
+          />
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="mb-3">
+          <label for="rendimentoMensal" class="form-label">Rendimento Mensal</label>
+          <input
+            type="number"
+            class="form-control"
+            id="rendimentoMensal"
+            formControlName="rendimentoMensal"
+          />
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="mb-3">
+          <label for="telefone" class="form-label">Telefone</label>
+          <input
+            type="text"
+            class="form-control"
+            id="telefone"
+            formControlName="telefone"
+          />
+        </div>
+      </div>
+      <h4>Endereço</h4>
+      <div formGroupName="endereco">
+        <div class="row">
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="rua" class="form-label">Rua</label>
+            <input
+              type="text"
+              class="form-control"
+              id="rua"
+              formControlName="rua"
+            />
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="mb-3">
+            <label for="numero" class="form-label">Numero</label>
+            <input
+              type="number"
+              class="form-control"
+              id="numero"
+              formControlName="numero"
+            />
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="mb-3">
+            <label for="cep" class="form-label">CEP</label>
+            <input
+              type="text"
+              class="form-control"
+              id="cep"
+              formControlName="cep"
+            />
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-dark" [disabled]="!userForm.valid">
+      Salvar
+    </button>
+  </form>
+</div>
+
+
+
